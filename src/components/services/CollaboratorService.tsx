@@ -6,7 +6,7 @@ class CollaboratorService {
     this.httpClient = new HttpClient('https://collaboratorbackend.herokuapp.com/');
   }
   async listCollaborator() {
-    return this.httpClient.get('/collaborator');
+    return this.httpClient.get('collaborator');
   }
 
   async listCollaboratorOne(id: string) {
