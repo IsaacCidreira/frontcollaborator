@@ -3,18 +3,18 @@ import { HttpClient } from './utils/HttpClient';
 class CollaboratorService {
   private httpClient: InstanceType<new (...args: []) => any>;
   constructor() {
-    this.httpClient = new HttpClient('http://localhost:3333');
+    this.httpClient = new HttpClient('https://collaboratorbackend.herokuapp.com/');
   }
   async listCollaborator() {
     return this.httpClient.get('/collaborator');
   }
 
   async listCollaboratorOne(id: string) {
-    return this.httpClient.get(`/collaborator/${id}`);
+    return this.httpClient.get(`collaborator/${id}`);
   }
 
   async deleteCollaboratorOne(id: string) {
-    return this.httpClient.delete(`http://localhost:3333/collaborator/${id}`);
+    return this.httpClient.delete(`https://collaboratorbackend.herokuapp.com/collaborator/${id}`);
   }
 
   async postCollaborator(
@@ -23,7 +23,7 @@ class CollaboratorService {
     telefone: string,
     url: string,
   ) {
-    return this.httpClient.post('http://localhost:3333/collaborator', {
+    return this.httpClient.post('https://collaboratorbackend.herokuapp.com/', {
       name: name,
       cargo: cargo,
       telefone: telefone,
@@ -38,7 +38,7 @@ class CollaboratorService {
     telefone: string,
     url: string,
   ) {
-    return this.httpClient.put(`http://localhost:3333/collaborator/${id}`, {
+    return this.httpClient.put(`https://collaboratorbackend.herokuapp.com/${id}`, {
       name: name,
       cargo: cargo,
       telefone: telefone,
