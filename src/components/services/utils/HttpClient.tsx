@@ -5,7 +5,7 @@ interface IBody {
   url: string;
 }
 class HttpClient {
-  constructor(private baseUrl: string) {}
+  constructor(private baseUrl: string) { }
   async get(path: string) {
     const response = await fetch(`${this.baseUrl}${path}`);
     let body = null;
